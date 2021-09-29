@@ -40,3 +40,20 @@ relocate(litters_df, litter_number)
 pups_df = janitor::clean_names(pups_df)
 select(pups_df, litter_number, sex, pd_ears)
 ```
+
+## `filter`
+
+Let’s get rid of rows…
+
+``` r
+filter(litters_df, gd_of_birth == 20)
+filter(litters_df, group == "Con7")
+
+filter(litters_df, gd0_weight < 23)
+
+filter(litters_df, pups_survive != 4)
+
+filter(litters_df, group %in% c("Con7", "Con8"))
+
+drop_na(litters_df)
+```
