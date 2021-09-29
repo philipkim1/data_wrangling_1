@@ -57,3 +57,24 @@ filter(litters_df, group %in% c("Con7", "Con8"))
 
 drop_na(litters_df)
 ```
+
+## `mutate`
+
+Let’s add or change columns!
+
+``` r
+mutate(
+  litters_df, 
+    weight_change = gd18_weight - gd0_weight,
+    group = str_to_lower(group))
+```
+
+## `arrange`
+
+Let’s rearrange the data.
+
+``` r
+arrange(litters_df, gd0_weight)
+arrange(litters_df, desc(gd0_weight))
+arrange(litters_df, gd_of_birth, gd0_weight)
+```
