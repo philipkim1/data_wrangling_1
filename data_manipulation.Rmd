@@ -17,3 +17,35 @@ litters_df = janitor::clean_names(litters_df)
 
 pups_df = read.csv("data/FAS_pups.csv")
 ```
+
+
+## `select`
+
+Let's select some columns.
+
+```{r results = "hide"}
+select(litters_df, group, litter_number)
+select(litters_df, group, gd0_weight, gd18_weight)
+
+select(litters_df, group, gd0_weight:gd_of_birth)
+select(litters_df, group, starts_with("pups"))
+
+select(litters_df, -litter_number)
+
+select(litters_df, GROUP = group, litter_number)
+
+rename(litters_df, GROUP = group)
+
+select(litters_df, litter_number, everything())
+
+relocate(litters_df, litter_number)
+```
+
+## Learning Assessment
+
+```{r results = "hide"}
+pups_df = janitor::clean_names(pups_df)
+select(pups_df, litter_number, sex, pd_ears)
+```
+
+
